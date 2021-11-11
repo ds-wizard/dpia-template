@@ -10,17 +10,20 @@
       {%- if ProjectName -%}
         <p> Project name : {{ ProjectName }} </p>
       {%- endif -%} 
-    
+
+      {%- set methodPath = [uuids.adminDetailsCUuid, uuids.methodQUuid]|reply_path -%} 
+      {%- set method = repliesMap[methodPath]|reply_str_value -%}
+
+       {%- if method -%}
+        <p> Method followed to carry out the DPIA  : {{ method }} </p>
+      {%- endif -%} 
 
       
 
         <dt>Based on</dt>
         <dd>{{ ctx.package.name }}, {{ ctx.package.version }} (<span class="package-id"><span class="organization-id">{{ ctx.package.organizationId }}</span>:<span class="km-id">{{ ctx.package.kmId }}</span>:<span class="version">{{ ctx.package.version }}</span></span>)</dd>
         
-        {%- if ctx.createdBy -%}
-        <dt>Created by</dt>
-        <dd><span class="contact-name">{{ ctx.createdBy.firstName }} {{ ctx.createdBy.lastName }}</span></dd>
-        {%- endif -%}
+    
 
         {% for version in ctx.questionnaireVersions if version.uuid == ctx.questionnaireVersion %}
         <dt>Version</dt>
@@ -31,7 +34,7 @@
         <dd>{{ ctx.createdAt|datetime_format("%d %b %Y") }}</dd>
     </dl>
     <p class="dsw">
-      Data Management Plan created in Data Stewardship Wizard &laquo;<a href="https://biohack.ds-wizard.org/" target="_blank">learning.ds-wizard.org</a>&raquo;
+      Data Protection Impact Assessment created in Data Stewardship Wizard &laquo;<a href="https://biohack.ds-wizard.org/" target="_blank">learning.ds-wizard.org</a>&raquo;
     </p>
 
   </div>

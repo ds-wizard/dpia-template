@@ -1,0 +1,45 @@
+<div id="context" class="question">
+ 
+  <div class="answer">
+
+  {%- set projectOverviewPath = [uuids.contextCUuid, uuids.projectOverviewQUuid]|reply_path -%}
+  {%- set projectOverview = repliesMap[projectOverviewPath]|reply_str_value-%}
+
+  {%- if projectOverview-%}
+        <h3> Processing under consideration for the research: purpose and outline of activities </h3>
+        <ul>
+        <li>
+        <p> {{ projectOverview }} </p>
+        </li>
+        </ul>
+      {%- endif -%} 
+
+  {%- set listResponsabilitiesPath = [uuids.contextCUuid, uuids.listResponsbilitiesQUuid]|reply_path -%}
+  {%- set listResponsabilities = repliesMap[listResponsabilitiesPath]|reply_str_value-%}
+
+  {%- if listResponsabilities-%}
+        <h3> List of responsibilities linked to the research </h3>
+        <ul>
+        <li>
+        <p> {{ listResponsabilities }} </p>
+        </li>
+        </ul>
+      {%- endif -%} 
+
+  {%- set standardsPath = [uuids.contextCUuid, uuids.standardsQUuid]|reply_path -%}
+  {%- set standards = repliesMap[standardsPath]|reply_str_value-%}
+  
+  {%- if standards-%}
+        <h3> Where applicable: standards relevant to the processing (e.g. code of conduct) </h3>
+         <ul>
+         <li>
+        <p> {{ standards }} </p>
+         </li>
+         </ul>
+      {%- endif -%} 
+  
+
+      
+
+  </div>
+</div>
