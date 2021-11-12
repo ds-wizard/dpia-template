@@ -1,0 +1,69 @@
+<div id="process_assets" class="question">
+ 
+  <div class="answer">
+
+  {%- set categoriesOfDataPath = [uuids.processes_assetsCUuid, uuids.categoriesofdataQUuid]|reply_path -%}
+  {%- set categoriesOfDataItems = repliesMap[categoriesOfDataPath]|reply_items-%}
+  
+  {%- if categoriesOfDataItems -%}
+
+  <h3> GDPR categorisation of the data </h3>
+  {% for choiceUuid in categoriesOfDataItems %}
+      <ul>
+      <li>
+      {{ km.entities.choices[choiceUuid].label }}
+      </li>
+      </ul>
+      {% endfor %}
+  {%- endif -%}
+
+{%- set listOfProjectPath = [uuids.processes_assetsCUuid, uuids.listOfProjectsQUuid]|reply_path -%}
+{%- set listOfProject = repliesMap[listOfProjectPath]|reply_str_value-%}
+
+{%- if listOfProject -%}
+    <h3> Listing of project data </h3>
+    
+     <p> {{ listOfProject }} </p>
+    
+{%- endif -%} 
+
+{%- set dataLifeCyclePolicyPath = [uuids.processes_assetsCUuid, uuids.dataLifecyclePolicyQUuid]|reply_path -%}
+{%- set dataLifeCyclePolicy = repliesMap[dataLifeCyclePolicyPath]|reply_str_value-%}
+
+{%- if dataLifeCyclePolicy -%}
+    <h3> Life cycle of data and policies </h3>
+    
+     <p> {{ dataLifeCyclePolicy }} </p>
+    
+{%- endif -%} 
+
+{%- set projectDataflowPath = [uuids.processes_assetsCUuid, uuids.projectDataFlowQUuid]|reply_path -%}
+{%- set projectDataflow = repliesMap[projectDataflowPath]|reply_str_value-%}
+
+{%- if projectDataflow -%}
+    <h3> Project projectDataflow </h3>
+     
+     <p> {{ projectDataflow }} </p>
+     
+{%- endif -%} 
+
+{%- set projectAssetsPath = [uuids.processes_assetsCUuid, uuids.projectAssetsQUuid]|reply_path -%}
+{%- set projectAssets = repliesMap[projectAssetsPath]|reply_str_value-%}
+
+{%- if projectAssets -%}
+    <h3> Data supporting assets  </h3>
+     
+     <p> {{ projectAssets }} </p>
+   
+{%- endif -%} 
+
+
+
+
+
+  
+
+      
+
+  </div>
+</div>

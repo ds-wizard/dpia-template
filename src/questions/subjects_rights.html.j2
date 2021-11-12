@@ -1,0 +1,97 @@
+<div id="subjects_rights" class="question">
+ 
+  <div class="answer">
+  
+  {%- set collectDataPath = [uuids.subjectsRightsCUuid, uuids.collectDataQUuid]|reply_path -%}
+  {%- set collectDataAUuid = repliesMap[collectDataPath]|reply_str_value-%}
+
+  {%- if collectDataAUuid == uuids.collectDataYesAUuid -%}
+    <h3> In this project we are collecting data from subjects participants </h3>
+    
+    {%- set subjectsInformedPath = [collectDataPath, uuids.collectDataYesAUuid, uuids.subjectsInformedQUuid]|reply_path -%}
+    {%- set subjectsInformed = repliesMap[subjectsInformedPath]|reply_str_value-%}
+
+     {%- if subjectsInformed-%}
+        <h3> Procedures to information of data subjects  </h3>
+        
+        <p> {{ subjectsInformed}} </p>
+       
+      {%- endif -%} 
+
+    {%- set subjectsConsentPath = [collectDataPath, uuids.collectDataYesAUuid, uuids.subjectsConsentQUuid]|reply_path -%}
+    {%- set subjectsConsent = repliesMap[subjectsConsentPath]|reply_str_value-%}
+
+     {%- if subjectsConsent-%}
+        <h3> Procedure to obtain the consent of data subjects  </h3>
+        
+        <p> {{ subjectsConsent}} </p>
+        
+      {%- endif -%} 
+
+    {%- set accessRightsPath = [collectDataPath, uuids.collectDataYesAUuid, uuids.accessRightsQUuid]|reply_path -%}
+    {%- set accessRights = repliesMap[accessRightsPath]|reply_str_value-%}
+
+     {%- if accessRights-%}
+        <h3> Procedures how data subjects exercise their rights of access   </h3>
+        
+        <p> {{ accessRights}} </p>
+        
+      {%- endif -%} 
+    
+    {%- set rightsToRectifyPath = [collectDataPath, uuids.collectDataYesAUuid, uuids.rightsToRectifyQUuid]|reply_path -%}
+    {%- set rightsToRectify = repliesMap[rightsToRectifyPath]|reply_str_value-%}
+
+     {%- if rightsToRectify-%}
+        <h3> Procedures how data subjects exercise their rights to rectification  </h3>
+        
+        <p> {{ rightsToRectify}} </p>
+        
+      {%- endif -%} 
+
+      {%- set rightsToRestrictPath = [collectDataPath, uuids.collectDataYesAUuid, uuids.rightToRestrictQUuid]|reply_path -%}
+      {%- set rightsToRestrict = repliesMap[rightsToRestrictPath]|reply_str_value-%}
+
+     {%- if rightsToRestrict-%}
+        <h3> Procedures how data subjects exercise their rights to restriction  </h3>
+        
+        <p> {{ rightsToRestrict}} </p>
+        
+      {%- endif -%} 
+
+      {%- set subprocessorsPath = [collectDataPath, uuids.collectDataYesAUuid, uuids.subprocessorsQUuid]|reply_path -%}
+      {%- set subprocessorsAUuid = repliesMap[subprocessorsPath]|reply_str_value-%}
+      
+      {%- if subprocessorsAUuid == uuids.subprocessorsYesAUuid         -%}
+        <h3> The project require subprocessors to undertake its activities  </h3>
+
+        {%- set subprocessorsActivitiesPath = [subprocessorsPath, uuids.subprocessorsYesAUuid, uuids.subprocessorsYesDescibeQUuid]|reply_path -%}
+        {%- set subprocessorsActivities = repliesMap[subprocessorsActivitiesPath]|reply_str_value-%}
+
+        {%- if subprocessorsActivities -%}
+        <p> {{ subprocessorsActivities }} </p>
+      {%- endif -%} 
+
+      {%- endif -%}
+
+      {%- set transferEUEEAPath = [collectDataPath, uuids.collectDataYesAUuid, uuids.transferEUEEAQUuid]|reply_path -%}
+      {%- set transferEUEEAAUuid = repliesMap[transferEUEEAPath]|reply_str_value-%}
+      
+      {%- if transferEUEEAAUuid == uuids.transferEUEEAYesAUuid        -%}
+        <h3> In the project we plan to transfer outside the EU/EEA </h3>
+
+        {%- set transferMeasuresPath = [transferEUEEAPath, uuids.transferEUEEAYesAUuid, uuids.transferEUEEAYesMeasuresQUuid]|reply_path -%}
+        {%- set transferMeasures = repliesMap[transferMeasuresPath]|reply_str_value-%}
+
+        {%- if transferMeasures -%}
+        <p> {{ transferMeasures }} </p>
+      {%- endif -%} 
+
+      {%- endif -%}
+    
+
+
+      
+  {%- endif -%} 
+
+  </div>
+</div>

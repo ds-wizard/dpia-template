@@ -7,11 +7,7 @@
 
   {%- if projectOverview-%}
         <h3> Processing under consideration for the research: purpose and outline of activities </h3>
-        <ul>
-        <li>
         <p> {{ projectOverview }} </p>
-        </li>
-        </ul>
       {%- endif -%} 
 
   {%- set listResponsabilitiesPath = [uuids.contextCUuid, uuids.listResponsbilitiesQUuid]|reply_path -%}
@@ -19,11 +15,9 @@
 
   {%- if listResponsabilities-%}
         <h3> List of responsibilities linked to the research </h3>
-        <ul>
-        <li>
+       
         <p> {{ listResponsabilities }} </p>
-        </li>
-        </ul>
+       
       {%- endif -%} 
 
   {%- set standardsPath = [uuids.contextCUuid, uuids.standardsQUuid]|reply_path -%}
@@ -31,11 +25,9 @@
   
   {%- if standards-%}
         <h3> Where applicable: standards relevant to the processing (e.g. code of conduct) </h3>
-         <ul>
-         <li>
+         
         <p> {{ standards }} </p>
-         </li>
-         </ul>
+         
       {%- endif -%} 
   
 

@@ -1,0 +1,59 @@
+<div id="risk_assessment" class="question">
+ 
+  <div class="answer">
+  
+    
+
+    {%- set plannedControlsPath = [uuids.riskAssessmentCUuid, uuids.plannedControlsQUuid]|reply_path -%}
+    {%- set plannedControl = repliesMap[plannedControlsPath]|reply_items -%}
+    
+    {%- if plannedControl|length > 0 -%}
+      
+        <h3>  Assessment of existing or planned controls: </h3>
+        {%- for i in plannedControl -%}
+       
+        {%- set pathPrefix = [plannedControlsPath, i]|reply_path -%}
+        
+        {# Control Special #}
+        
+        {%- set controlsSpecial = repliesMap[[pathPrefix, uuids.controlSpecialQUuid]|reply_path]|reply_str_value -%}
+
+       
+        <p> {{ controlsSpecial }} </p>
+       
+
+        {# general Controls #}
+        
+        {%- set generalControls = repliesMap[[pathPrefix, uuids.generalControlsQUuid ]|reply_path]|reply_str_value -%}
+
+        <p> {{ generalControls }} </p>
+        
+        {# organisational Controls #}
+        
+        {%- set organiZationalControls = repliesMap[[pathPrefix, uuids.organizationalControlsQUuid ]|reply_path]|reply_str_value -%}
+
+        <p> {{ organiZationalControls }} </p>
+       
+        {%- endfor -%} 
+
+    {%- endif -%} 
+
+    
+
+
+
+
+
+  {%- set riskMatrixPath = [uuids.riskAssessmentCUuid, uuids.riskAssesmentMatrixQUuid]|reply_path -%}
+  {%- set riskMatrix = repliesMap[riskMatrixPath]|reply_str_value-%}
+
+  {%- if riskMatrix-%}
+        <h3> Risk Assessment Matrix </h3>
+       
+        <p> {{ riskMatrix}} </p>
+        
+      {%- endif -%} 
+
+
+  </div>
+</div>

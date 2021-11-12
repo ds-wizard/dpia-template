@@ -18,7 +18,7 @@
 
             "orgId": "dsw.biohackathon",
             "kmId": "data-protection-impact-assessment",
-            "minVersion": "0.0.1",
+            "minVersion": "0.0.3",
             "maxVersion": null
         }
     ],
@@ -56,7 +56,102 @@
                     }
                 }
             ]
+        },
+
+        {
+            "uuid": "218082fa-c634-4b83-8bd0-dc6758b78886",
+            "name": "LaTeX Document",
+            "shortName": "latex",
+            "icon": "far fa-file-alt",
+            "color": "#44D7B6",
+            "steps": [{
+                    "name": "jinja",
+                    "options": {
+                        "content-type": "text/html",
+                        "extension": "html",
+                        "template": "src/index.html.j2"
+                    }
+                },
+                {
+                    "name": "pandoc",
+                    "options": {
+                        "to": "latex",
+                        "from": "html"
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": "176e3d4f-178f-47dc-9234-e38200c13a9e",
+            "name": "MS Word Document",
+            "shortName": "docx",
+            "icon": "far fa-file-word",
+            "color": "#0991FF",
+            "steps": [{
+                    "name": "jinja",
+                    "options": {
+                        "content-type": "text/html",
+                        "extension": "html",
+                        "template": "src/index.html.j2"
+                    }
+                },
+                {
+                    "name": "pandoc",
+                    "options": {
+                        "to": "docx",
+                        "from": "html"
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": "9de61e96-6c06-461e-82aa-c67431914f1a",
+            "name": "OpenDocument Text",
+            "shortName": "odt",
+            "icon": "far fa-file-alt",
+            "color": "#32C5FF",
+            "steps": [{
+                    "name": "jinja",
+                    "options": {
+                        "content-type": "text/html",
+                        "extension": "html",
+                        "template": "src/index.html.j2"
+                    }
+                },
+                {
+                    "name": "pandoc",
+                    "options": {
+                        "to": "odt",
+                        "from": "html"
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": "de95f5c5-063c-416f-a9f3-aee98ecd4186",
+            "name": "Markdown Document",
+            "shortName": "md",
+            "icon": "far fa-file-alt",
+            "color": "#6D7278",
+            "steps": [{
+                    "name": "jinja",
+                    "options": {
+                        "content-type": "text/html",
+                        "extension": "html",
+                        "template": "src/index.html.j2"
+                    }
+                },
+                {
+                    "name": "pandoc",
+                    "options": {
+                        "to": "markdown",
+                        "from": "html"
+                    }
+                }
+            ]
         }
+
+
     ],
     "_tdk": {
         "version": "3.5.0",

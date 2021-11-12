@@ -10,15 +10,27 @@
       {%- if ProjectName -%}
         <p> Project name : {{ ProjectName }} </p>
       {%- endif -%} 
-
-      {%- set methodPath = [uuids.adminDetailsCUuid, uuids.methodQUuid]|reply_path -%} 
-      {%- set method = repliesMap[methodPath]|reply_str_value -%}
-
-       {%- if method -%}
-        <p> Method followed to carry out the DPIA  : {{ method }} </p>
-      {%- endif -%} 
-
       
+      {%- set contributorsPath = [uuids.adminDetailsCUuid, uuids.contributorsQUuid]|reply_path -%}
+  
+      {%- set contributorsItems = repliesMap[contributorsPath]|reply_items -%}
+    
+      {%- if contributorsItems|length > 0 -%}
+         <p> Contributors: </p> 
+        {%- for i in contributorsItems -%}
+        
+        {%- set pathPrefix = [contributorsPath, i]|reply_path -%}
+        
+        
+        
+        {%- set contributorName = repliesMap[[pathPrefix, uuids.contributorNameQUuid]|reply_path]|reply_str_value -%}
+        <ul>
+        <p> {{ contributorName }} </p>
+        </ul>
+        {%- endfor -%} 
+
+    {%- endif -%} 
+    
 
         <dt>Based on</dt>
         <dd>{{ ctx.package.name }}, {{ ctx.package.version }} (<span class="package-id"><span class="organization-id">{{ ctx.package.organizationId }}</span>:<span class="km-id">{{ ctx.package.kmId }}</span>:<span class="version">{{ ctx.package.version }}</span></span>)</dd>

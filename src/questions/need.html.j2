@@ -3,51 +3,44 @@
   <div class="answer">
 
   {%- set needDpiaPath = [uuids.needForDpiaCUuid, uuids.whyDPIAQUuid, ]|reply_path -%}
-  {%- set needDpiaAUuid = repliesMap[needDpiaPath]|reply_items -%}
+  {%- set needDpiaItems = repliesMap[needDpiaPath]|reply_items -%}
 
   {%- set otherReasonsPath = [uuids.needForDpiaCUuid, uuids.dpiaOtherReasonQUuid]|reply_path -%}
   {%- set otherReasonsAUuid = repliesMap[otherReasonsPath]|reply_str_value-%}
 
-  {%- if needDpiaAUuid or otherReasonsAUuid-%}
+  {%- if needDpiaItems or otherReasonsAUuid-%}
    {# <p> {{ needDpiaAUuid }} </p> #}
    
    
 
       <h3> A DPIA is deemed necessary for the project as: </h3>
+            
+      {% for choiceUuid in needDpiaItems %}
       <ul>
-        <li>
-           
+      <li>
+      {{ km.entities.choices[choiceUuid].label }}
+      </li>
+      </ul>
+      {% endfor %}
           
-          {#
-          {%- if needDpiaAUuid == "['f6f5def0-2638-4495-985f-889a1666fb46']" -%}
-            <p> Data concerning vulnerable data subjects including minors, employees, elderly, mentally incapacitated, patients receiving care.</p>
-          
-          {%- elif needDpiaAUuid == "['f5b79efc-4ee0-4778-9cc9-ab45ac7a7d80']"-%}
-            <p> Sensitive data or data of a highly personal nature: which includes racial or ethnic origin; political opinions; religious or philosophical beliefs; trade union membership; genetic data; data concerning health; biometric data; sexual orientation.</p>
-          {%- elif needDpiaAUuid == "['13e3f54c-e782-48c2-a792-fa4f79d489ca']" -%}
-            <p> Data processed on a large scale: data of proportion of the relevant population, long term processing, wide geographical scale, large volume or range of data. </p>
-          {%- elif needDpiaAUuid == "['c0208d58-dfc3-4641-b63b-c10a45c848ff']" -%}
-          <p> Automated-decision making with legal or similar significant effect on data subjects. </p>
-          {%- elif needDpiaAUuid == "['356c4b11-8259-4bc2-8394-a127569e7b1a']" -%}
-            <p> Evaluation or scoring on aspects concerning the data subject's performance at work, economic situation, health, personal preferences or interests, reliability or behavior, location or movements.</p>
-          {%- elif needDpiaAUuid == "['82acf3b8-458a-4fdd-8691-4edcd7e0f9ee']" -%}
-            <p> Systematic monitoring, processing used to observe, monitor or control data subjects, including data collected through networks.</p>
-          {%- elif needDpiaAUuid == "['9f02fa20-af96-486d-8958-c0c4c65fade6']" -%}
-            <p> Matching or combining datasets, for example originating from two or more data processing operations performed for different purposes.</p>
-          {%- elif needDpiaAUuid == "['713a6824-61a0-45d0-979d-cd729e43e51c']" -%}
-            <p>Innovative use or applying new technological or organisational solutions, like combining the use of finger print and face recognition for physical access control.</p>
-          {%- elif needDpiaAUuid == "['ca67dd8a-41d0-4542-9c35-f62b99d59f97']" -%}
-            <p>Processing that prevents data subjects from exercising a right or using a service or a contract. </p>
-          {%- endif -%} 
-          #}
-
-        
-          <p> {{ otherReasonsAUuid }} </p>
+      <ul>
+      <li>        
+      <p> {{ otherReasonsAUuid }} </p>
+      </li>
+      </ul>
       
         </li> 
       </ul>  
 
   {%- endif -%} 
+
+  {%- set methodPath = [uuids.adminDetailsCUuid, uuids.methodQUuid]|reply_path -%} 
+      {%- set method = repliesMap[methodPath]|reply_str_value -%}
+
+       {%- if method -%}
+        <h3> Method followed to carry out the DPIA </h3>
+        <p>  {{ method }} </p>
+      {%- endif -%} 
 
     
 
