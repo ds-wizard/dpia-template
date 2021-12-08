@@ -1,40 +1,29 @@
 <div id="need-for-a-dpia" class="question">
- 
+  
   <div class="answer">
 
-  {%- set needDpiaPath = [uuids.needForDpiaCUuid, uuids.whyDPIAQUuid, ]|reply_path -%}
-  {%- set needDpiaItems = repliesMap[needDpiaPath]|reply_items -%}
+    {%- set needDpiaPath = [uuids.needForDpiaCUuid, uuids.whyDPIAQUuid, ]|reply_path -%}
+    {%- set needDpiaItems = repliesMap[needDpiaPath]|reply_items -%}
 
-  {%- set otherReasonsPath = [uuids.needForDpiaCUuid, uuids.dpiaOtherReasonQUuid]|reply_path -%}
-  {%- set otherReasonsAUuid = repliesMap[otherReasonsPath]|reply_str_value-%}
+    {%- set otherReasonsPath = [uuids.needForDpiaCUuid, uuids.dpiaOtherReasonQUuid]|reply_path -%}
+    {%- set otherReasonsAUuid = repliesMap[otherReasonsPath]|reply_str_value-%}
 
-  {%- if needDpiaItems or otherReasonsAUuid-%}
-   {# <p> {{ needDpiaAUuid }} </p> #}
-   
-   
-
+    {%- if needDpiaItems or otherReasonsAUuid-%}
       <h3> A DPIA is deemed necessary for the project since </h3>
-            
+      
       {% for choiceUuid in needDpiaItems %}
-      <ul>
-      <li>
-      {{ km.entities.choices[choiceUuid].label }}
-      </li>
-      </ul>
+        <ul>
+          <li>
+            {{ km.entities.choices[choiceUuid].label }}
+          </li>
+        </ul>
       {% endfor %}
-          
-      <ul>
-      <li>        
-      <p> {{ otherReasonsAUuid }} </p>
-      </li>
-      </ul>
-      
-        </li> 
-      </ul>  
 
-  {%- endif -%} 
-
-      
+      {% if otherReasonsAUuid -%}
+        <h4> Aside from the above list, other reasons for which a DPIA is required</h4>
+        <p> {{ otherReasonsAUuid }} </p>
+      {%- endif -%} 
+    {%- endif -%} 
 
   </div>
 </div>
