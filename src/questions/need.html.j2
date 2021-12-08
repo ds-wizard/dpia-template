@@ -13,7 +13,7 @@
    
    
 
-      <h3> A DPIA is deemed necessary for the project as: </h3>
+      <h3> A DPIA is deemed necessary for the project since </h3>
             
       {% for choiceUuid in needDpiaItems %}
       <ul>
@@ -33,16 +33,6 @@
       </ul>  
 
   {%- endif -%} 
-
-  {%- set methodPath = [uuids.adminDetailsCUuid, uuids.methodQUuid]|reply_path -%} 
-      {%- set method = repliesMap[methodPath]|reply_str_value -%}
-
-       {%- if method -%}
-        <h3> Method followed to carry out the DPIA </h3>
-        <p>  {{ method }} </p>
-      {%- endif -%} 
-
-    
 
       
 
