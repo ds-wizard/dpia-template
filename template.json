@@ -1,11 +1,11 @@
 {
   "templateId": "dpia-template",
   "organizationId": "dsw.biohackathon",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "name": "DPIA Template",
   "description": "A lightweight DPIA template",
-  "license": "CC0",
-  "metamodelVersion": 5,
+  "license": "Apache-2.0",
+  "metamodelVersion": 6,
   "recommendedPackageId": "dsw.biohackathon:dpia:0.0.1",
   "allowedPackages": [
     {
