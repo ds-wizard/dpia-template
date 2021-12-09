@@ -1,0 +1,35 @@
+<div id="context" class="question">
+  
+  <div class="answer">
+
+    {%- set projectOverviewPath = [uuids.contextCUuid, uuids.projectOverviewQUuid]|reply_path -%}
+    {%- set projectOverview = repliesMap[projectOverviewPath]|reply_str_value-%}
+
+    {%- if projectOverview-%}
+      <h3> Project aims and type of data processing involved </h3>
+      
+      <p> {{ projectOverview }} </p>
+    {%- endif -%} 
+
+    {%- set listResponsabilitiesPath = [uuids.contextCUuid, uuids.listResponsbilitiesQUuid]|reply_path -%}
+    {%- set listResponsabilities = repliesMap[listResponsabilitiesPath]|reply_str_value-%}
+    
+    {%- if listResponsabilities-%}
+      <h3> List of the GDPR roles and responsibilities of all stakeholders linked to the research </h3>
+      
+      <p> {{ listResponsabilities }} </p>
+      
+    {%- endif -%} 
+
+    {%- set standardsPath = [uuids.contextCUuid, uuids.standardsQUuid]|reply_path -%}
+    {%- set standards = repliesMap[standardsPath]|reply_str_value-%}
+    
+    {%- if standards -%}
+      <h3> Where applicable, list of relevant guidelines/standards used </h3>
+      
+      <p> {{ standards }} </p>
+      
+    {%- endif -%} 
+
+  </div>
+</div>

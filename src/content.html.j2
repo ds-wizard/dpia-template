@@ -1,71 +1,37 @@
 <div id="dpia-content">
-    <section id="need-for-a-dpia" class="dpia-section">
-        <h2>Section A: Identification of the need for a DPIA  </h2>
+  <section id="need-for-a-dpia" class="dpia-section">
+    <h2>Section A. Identification of the need for a DPIA  </h2>
 
-        {% include "src/questions/need.html.j2" with context %} 
-         
-         
+    {% include "src/chapters/need.html.j2" with context %} 
+  </section>
 
-    </section>
+  <section id="context" class="dpia-section">
+    <h2>Section B. Overview  </h2>
 
-     <section id="context" class="dpia-section">
-        <h2>Section B: Context Extablishment  </h2>
+    {% include "src/chapters/context.html.j2" with context %} 
+  </section>
 
-        {% include "src/questions/context.html.j2" with context %} 
-         
-         
+  <section id="process_assets" class="dpia-section">
+    <h2>Section C. Data, processes and supporting assets   </h2>
 
-    </section>
+    {% include "src/chapters/process_assets.html.j2" with context %} 
+  </section>
 
-    
+  <section id="propotionnaliy_process" class="dpia-section">
+    <h2>Section D. Proportionality  and  necessity  of  the  processing    </h2>
 
-    <section id="process_assets" class="dpia-section">
-        <h2>Section C: Data, processes and supporting assets   </h2>
+    {% include "src/chapters/proportionality_processing.html.j2" with context %} 
+  </section>  
 
-        {% include "src/questions/process_assets.html.j2" with context %} 
-         
-         
+  <section id="sujects_rights" class="dpia-section">
+    <h2>Section E. Data subjects' rights  </h2>
 
-    </section>
+    {% include "src/chapters/subjects_rights.html.j2" with context %} 
+  </section>
 
-    <section id="propotionnaliy_process" class="dpia-section">
-        <h2>Section D: Proportionality  and  necessity  of  the  processing    </h2>
+  <section id="risk_assessment" class="dpia-section">
+    <h2>Section F.  Risk assessment  </h2>
 
-        {% include "src/questions/proportionality_processing.html.j2" with context %} 
-         
-         
-
-    </section>  
-
-
-    <section id="sujects_rights" class="dpia-section">
-        <h2>Section E: Data Subjects rights  </h2>
-
-        {% include "src/questions/subjects_rights.html.j2" with context %} 
-         
-         
-
-    </section>
-
-    <section id="risk_assessment" class="dpia-section">
-        <h2>Section F: Risk Assessment  </h2>
-
-        {% include "src/questions/risk_assessment.html.j2" with context %} 
-         
-         
-
-    </section>   
-
+    {% include "src/chapters/risk_assessment.html.j2" with context %} 
+  </section>   
 </div>
-
-
-
-
-
-
-    
-
-
-
-
- 

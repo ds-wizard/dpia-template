@@ -1,163 +1,164 @@
 {
-    "templateId": "dpia-template",
-    "organizationId": "dsw.biohackathon",
-    "version": "0.1.0",
-    "name": "DPIA Template",
-    "description": "A lightweight DPIA template",
-    "license": "CC0",
-    "metamodelVersion": 5,
-    "recommendedPackageId": "dsw.biohackathon:dpia:0.0.1",
-    "allowedPackages": [
-        {
-            "orgId": "dsw.biohackathon",
-            "kmId": "dpia",
-            "minVersion": "0.0.1",
-            "maxVersion": null
-        },
-        {
-
-            "orgId": "dsw.biohackathon",
-            "kmId": "data-protection-impact-assessment",
-            "minVersion": "0.0.3",
-            "maxVersion": null
-        }
-    ],
-    "formats": [
-        {
-            "uuid": "94b0a505-70ad-4d0a-a00b-6d72dd6c9688",
-            "name": "HTML",
-            "shortName": "html",
-            "icon": "fas fa-file",
-            "color": "#f15722",
-            "steps": [
-                {
-                    "name": "jinja",
-                    "options": {
-                        "template": "src/index.html.j2",
-                        "content-type": "text/html",
-                        "extension": "html"
-                    }
-                }
-            ]
-        },
-        {
-            "uuid": "e0a15e7b-7ab5-45bd-8a43-6ea27ca4dcd0",
-            "name": "PDF",
-            "shortName": "pdf",
-            "icon": "fas fa-file",
-            "color": "#f15722",
-            "steps": [
-                {
-                    "name": "jinja",
-                    "options": {
-                        "template": "src/index.html.j2",
-                        "content-type": "application/pdf",
-                        "extension": "pdf"
-                    }
-                }
-            ]
-        },
-
-        {
-            "uuid": "218082fa-c634-4b83-8bd0-dc6758b78886",
-            "name": "LaTeX Document",
-            "shortName": "latex",
-            "icon": "far fa-file-alt",
-            "color": "#44D7B6",
-            "steps": [{
-                    "name": "jinja",
-                    "options": {
-                        "content-type": "text/html",
-                        "extension": "html",
-                        "template": "src/index.html.j2"
-                    }
-                },
-                {
-                    "name": "pandoc",
-                    "options": {
-                        "to": "latex",
-                        "from": "html"
-                    }
-                }
-            ]
-        },
-        {
-            "uuid": "176e3d4f-178f-47dc-9234-e38200c13a9e",
-            "name": "MS Word Document",
-            "shortName": "docx",
-            "icon": "far fa-file-word",
-            "color": "#0991FF",
-            "steps": [{
-                    "name": "jinja",
-                    "options": {
-                        "content-type": "text/html",
-                        "extension": "html",
-                        "template": "src/index.html.j2"
-                    }
-                },
-                {
-                    "name": "pandoc",
-                    "options": {
-                        "to": "docx",
-                        "from": "html"
-                    }
-                }
-            ]
-        },
-        {
-            "uuid": "9de61e96-6c06-461e-82aa-c67431914f1a",
-            "name": "OpenDocument Text",
-            "shortName": "odt",
-            "icon": "far fa-file-alt",
-            "color": "#32C5FF",
-            "steps": [{
-                    "name": "jinja",
-                    "options": {
-                        "content-type": "text/html",
-                        "extension": "html",
-                        "template": "src/index.html.j2"
-                    }
-                },
-                {
-                    "name": "pandoc",
-                    "options": {
-                        "to": "odt",
-                        "from": "html"
-                    }
-                }
-            ]
-        },
-        {
-            "uuid": "de95f5c5-063c-416f-a9f3-aee98ecd4186",
-            "name": "Markdown Document",
-            "shortName": "md",
-            "icon": "far fa-file-alt",
-            "color": "#6D7278",
-            "steps": [{
-                    "name": "jinja",
-                    "options": {
-                        "content-type": "text/html",
-                        "extension": "html",
-                        "template": "src/index.html.j2"
-                    }
-                },
-                {
-                    "name": "pandoc",
-                    "options": {
-                        "to": "markdown",
-                        "from": "html"
-                    }
-                }
-            ]
-        }
-
-
-    ],
-    "_tdk": {
-        "version": "3.5.0",
-        "readmeFile": "README.md",
-        "files": [
-            "src/**/*"
-        ]
+  "templateId": "dpia-template",
+  "organizationId": "dsw.biohackathon",
+  "version": "0.3.0",
+  "name": "DPIA Template",
+  "description": "A lightweight DPIA template",
+  "license": "CC0",
+  "metamodelVersion": 5,
+  "recommendedPackageId": "dsw.biohackathon:dpia:0.0.1",
+  "allowedPackages": [
+    {
+      "orgId": "dsw.biohackathon",
+      "kmId": "dpia",
+      "minVersion": "0.0.1",
+      "maxVersion": null
+    },
+    {
+      "orgId": "dsw.biohackathon",
+      "kmId": "data-protection-impact-assessment",
+      "minVersion": "0.0.3",
+      "maxVersion": null
     }
+  ],
+  "formats": [
+    {
+      "uuid": "94b0a505-70ad-4d0a-a00b-6d72dd6c9688",
+      "name": "HTML",
+      "shortName": "html",
+      "icon": "fas fa-file",
+      "color": "#f15722",
+      "steps": [
+        {
+          "name": "jinja",
+          "options": {
+            "content-type": "text/html",
+            "extension": "html",
+            "template": "src/index.html.j2"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "e0a15e7b-7ab5-45bd-8a43-6ea27ca4dcd0",
+      "name": "PDF",
+      "shortName": "pdf",
+      "icon": "fas fa-file",
+      "color": "#f15722",
+      "steps": [
+        {
+          "name": "jinja",
+          "options": {
+            "content-type": "application/pdf",
+            "extension": "pdf",
+            "template": "src/index.html.j2"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "218082fa-c634-4b83-8bd0-dc6758b78886",
+      "name": "LaTeX Document",
+      "shortName": "latex",
+      "icon": "far fa-file-alt",
+      "color": "#44D7B6",
+      "steps": [
+        {
+          "name": "jinja",
+          "options": {
+            "content-type": "text/html",
+            "extension": "html",
+            "template": "src/index.html.j2"
+          }
+        },
+        {
+          "name": "pandoc",
+          "options": {
+            "to": "latex",
+            "from": "html"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "176e3d4f-178f-47dc-9234-e38200c13a9e",
+      "name": "MS Word Document",
+      "shortName": "docx",
+      "icon": "far fa-file-word",
+      "color": "#0991FF",
+      "steps": [
+        {
+          "name": "jinja",
+          "options": {
+            "content-type": "text/html",
+            "extension": "html",
+            "template": "src/index.html.j2"
+          }
+        },
+        {
+          "name": "pandoc",
+          "options": {
+            "to": "docx",
+            "from": "html"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "9de61e96-6c06-461e-82aa-c67431914f1a",
+      "name": "OpenDocument Text",
+      "shortName": "odt",
+      "icon": "far fa-file-alt",
+      "color": "#32C5FF",
+      "steps": [
+        {
+          "name": "jinja",
+          "options": {
+            "content-type": "text/html",
+            "extension": "html",
+            "template": "src/index.html.j2"
+          }
+        },
+        {
+          "name": "pandoc",
+          "options": {
+            "to": "odt",
+            "from": "html"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "de95f5c5-063c-416f-a9f3-aee98ecd4186",
+      "name": "Markdown Document",
+      "shortName": "md",
+      "icon": "far fa-file-alt",
+      "color": "#6D7278",
+      "steps": [
+        {
+          "name": "jinja",
+          "options": {
+            "content-type": "text/html",
+            "extension": "html",
+            "template": "src/index.html.j2"
+          }
+        },
+        {
+          "name": "pandoc",
+          "options": {
+            "to": "markdown",
+            "from": "html"
+          }
+        }
+      ]
+    }
+  ],
+  "_tdk": {
+    "version": "3.5.0",
+    "readmeFile": "README.md",
+    "files": [
+      "src/*/*",
+      "src/*"
+    ]
+  }
 }

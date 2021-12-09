@@ -1,0 +1,74 @@
+<div id="propotionnaliy_process" class="question">
+  
+  <div class="answer">
+
+    {%- set projectPurposePath = [uuids.proportionality_processCUuid, uuids.projectPurposesQUuid]|reply_path -%}
+    {%- set projectPurpose = repliesMap[projectPurposePath]|reply_str_value-%}
+
+    {%- if projectPurpose-%}
+      <h3> Explicit and legitimate project purposes </h3>
+      
+      <p> {{ projectPurpose }} </p>
+    {%- endif -%} 
+
+    {%- set GDPRLegalBasisPath = [uuids.proportionality_processCUuid, uuids.GDPRLegalBasisQUuid]|reply_path -%}
+    {%- set GDPRLegalBasisItems = repliesMap[GDPRLegalBasisPath]|reply_items-%}
+
+    {%- if GDPRLegalBasisItems-%}
+
+      <h3> The legal bases for data processing  </h3>
+
+      {% for choiceUuid in GDPRLegalBasisItems %}
+        <ul>
+          <li>
+            {{ km.entities.choices[choiceUuid].label }}
+          </li>
+        </ul>
+      {% endfor %}
+    {%- endif -%}
+
+
+{%- set legalBasisPath = [uuids.proportionality_processCUuid, uuids.legalBasisQUuid]|reply_path -%}
+{%- set legalBasis = repliesMap[legalBasisPath]|reply_str_value-%}
+
+{%- if legalBasis-%}
+  <h3> The legalBasis :  duplicate of previous question??? </h3>
+  
+  <p> {{ legalBasis }} </p>
+  
+{%- endif -%} 
+
+{%- set dataMinimizationPath = [uuids.proportionality_processCUuid, uuids.dataMinimizationQUuid]|reply_path -%}
+{%- set dataMinimization = repliesMap[dataMinimizationPath]|reply_str_value-%}
+
+{%- if dataMinimization-%}
+  <h3> Adequate, relevant, and limited data processing </h3>
+  
+  <p> {{ dataMinimization }} </p>
+  
+{%- endif -%} 
+
+{%- set dataQualityPath = [uuids.proportionality_processCUuid, uuids.dataQualityQUuid]|reply_path -%}
+{%- set dataQuality = repliesMap[dataQualityPath]|reply_str_value-%}
+
+{%- if dataQuality-%}
+  <h3> Accurate and up-to-date data </h3>
+  
+  <p> {{ dataQuality }} </p>
+  
+{%- endif -%} 
+
+{%- set storageDurationPath = [uuids.proportionality_processCUuid, uuids.storageDurationQUuid]|reply_path -%}
+{%- set storageDuration = repliesMap[storageDurationPath]|reply_str_value-%}
+
+{%- if storageDuration-%}
+  <h3> Limited data storage period </h3>
+  
+  <p> {{ storageDuration }} </p>
+  
+{%- endif -%} 
+
+
+
+  </div>
+</div>
