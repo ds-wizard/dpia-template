@@ -6,8 +6,7 @@ A lightweight DPIA template
 
 ### 0.3.0
 
-- some 'cleaning up' and reorganising; but needs the KM to evolve to better reflect the contents chosen out of CNIL, ICO, and LCSB guidance.
-
+- Some 'cleaning up' and reorganising; but needs the KM to evolve to better reflect the contents chosen out of CNIL, ICO, and LCSB guidance.
 
 ### 0.2.0
 

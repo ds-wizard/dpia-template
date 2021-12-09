@@ -5,7 +5,7 @@
   {%- set categoriesOfDataPath = [uuids.processes_assetsCUuid, uuids.categoriesofdataQUuid]|reply_path -%}
   {%- set categoriesOfData = repliesMap[categoriesOfDataPath]|reply_items-%}
 
-{%- set listOfProjectPath = [uuids.Processes_assetsCUuid, uuids.listOfProjectsQUuid]|reply_path -%}
+{%- set listOfProjectPath = [uuids.processes_assetsCUuid, uuids.listOfProjectsQUuid]|reply_path -%}
 {%- set listOfProject = repliesMap[listOfProjectPath]|reply_str_value-%}
 
 {%- if listOfProject -%}
@@ -17,7 +17,7 @@
      </ul>
 {%- endif -%} 
 
-{%- set dataLifeCyclePolicyPath = [uuids.Processes_assetsCUuid, uuids.dataLifecyclePolicyQUuid]|reply_path -%}
+{%- set dataLifeCyclePolicyPath = [uuids.processes_assetsCUuid, uuids.dataLifecyclePolicyQUuid]|reply_path -%}
 {%- set dataLifeCyclePolicy = repliesMap[dataLifeCyclePolicyPath]|reply_str_value-%}
 
 {%- if dataLifeCyclePolicy -%}
@@ -29,11 +29,11 @@
      </ul>
 {%- endif -%} 
 
-{%- set projectDataflowPath = [uuids.Processes_assetsCUuid, uuids.projectDataFlowQUuid]|reply_path -%}
+{%- set projectDataflowPath = [uuids.processes_assetsCUuid, uuids.projectDataFlowQUuid]|reply_path -%}
 {%- set projectDataflow = repliesMap[projectDataflowPath]|reply_str_value-%}
 
 {%- if projectDataflow -%}
-    <h3> Project projectDataflow </h3>
+    <h3> Project data flows </h3>
      <ul>
      <li>
      <p> {{ projectDataflow }} </p>
@@ -41,7 +41,7 @@
      </ul>
 {%- endif -%} 
 
-{%- set projectAssetsPath = [uuids.Processes_assetsCUuid, uuids.projectAssetsQUuid]|reply_path -%}
+{%- set projectAssetsPath = [uuids.processes_assetsCUuid, uuids.projectAssetsQUuid]|reply_path -%}
 {%- set projectAssets = repliesMap[projectAssetsPath]|reply_str_value-%}
 
 {%- if projectAssets -%}
@@ -52,14 +52,6 @@
      </li>
      </ul>
 {%- endif -%} 
-
-
-
-
-
-  
-
-      
 
   </div>
 </div>
