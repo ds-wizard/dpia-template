@@ -6,7 +6,7 @@
   {%- set collectDataAUuid = repliesMap[collectDataPath]|reply_str_value-%}
 
   {%- if collectDataAUuid == uuids.collectDataYesAUuid -%}
-    <h3> In this project subjects' data is collected </h3>
+    
     
     {%- set subjectsInformedPath = [collectDataPath, uuids.collectDataYesAUuid, uuids.subjectsInformedQUuid]|reply_path -%}
     {%- set subjectsInformed = repliesMap[subjectsInformedPath]|reply_str_value-%}
