@@ -1,11 +1,11 @@
 {
   "templateId": "dpia-template",
   "organizationId": "dsw.biohackathon",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "name": "DPIA Template",
   "description": "A lightweight DPIA template",
   "license": "Apache-2.0",
-  "metamodelVersion": 6,
+  "metamodelVersion": 9,
   "recommendedPackageId": "dsw.biohackathon:dpia:0.0.1",
   "allowedPackages": [
     {
@@ -17,6 +17,12 @@
     {
       "orgId": "dsw.biohackathon",
       "kmId": "data-protection-impact-assessment",
+      "minVersion": "0.0.3",
+      "maxVersion": null
+    },
+    {
+      "orgId": "dsw.biohackathon",
+      "kmId": "dsw-data-protection-impact-assessment",
       "minVersion": "0.0.3",
       "maxVersion": null
     }
